@@ -1,0 +1,32 @@
+<div>
+ <form #employeeForm="ngForm" (ngSubmit)="addEmployeeDetails(employeeForm)">
+  <fieldset >
+    <legend>Employee Details</legend>
+     <label>
+      ID <input type="text" name="id" [ngModel]="employeeId"  readonly required>
+    </label><br>
+    <label>
+      First Name <input type="text" name="firstname" ngModel required>
+    </label><br>
+    <label>
+      Last Name <input type="text" name="lastname" ngModel required>
+    </label><br>
+    <label>
+      Email <input type="email" name="email" ngModel required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+    </label><br>
+    <label>
+      Phone(10 digit) <input type="text" name="phone_no" ngModel   pattern="^\d{10}$" required>
+    </label><br>
+     <label>
+      Status<select name="status" ngModel required>
+       <option value="Active">Active</option>
+       <option value="Inactive">Inactive</option>
+       </select>
+
+    </label><br>
+   
+  </fieldset>
+  <button [disabled]="employeeForm.invalid" type="submit">Add</button>
+  <button  [routerLink]="['/list']">Cancel</button>
+</form>
+  <div>

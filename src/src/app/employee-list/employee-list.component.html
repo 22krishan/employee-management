@@ -1,0 +1,33 @@
+<div>
+<button #add name='operation' value="add"  (click)="getDetails(operation=add.value)">Add Employee</button>
+<div *ngIf="employeeService.employees.length">
+<table style="width=100%">
+<tr>
+  <td>ID</td>
+  <td>FirstName</td>
+  <td>LastName</td>
+  <td>Email</td>
+  <td>Phone</td>
+  <td>Status</td> 
+  <td>Action</td>
+</tr>
+<tr #seletedRow *ngFor="let employee of employeeService.employees">
+  <td>{{employee.id}}</td>
+  <td>{{employee.firstname}}</td>
+  <td>{{employee.lastname}}</td>
+  <td>{{employee.email}}</td>
+  <td>{{employee.phone_no | validatePhoneNumber}}</td>
+  <td>{{employee.status}}</td>
+  <td>
+  <button #edit name='operation' value="edit"  (click)="getDetails(employee.id,edit.value)">Edit</button>
+  <button #delete name='operation'  value="delete" (click)="getDetails(employee.id,delete.value)">Delete</button>
+  </td>
+</tr>
+</table>
+</div>
+
+<div *ngIf="popUpFlag">
+<pop-up [operation]="operation" (output)="performOperation($event)"></pop-up>
+</div>
+
+</div>

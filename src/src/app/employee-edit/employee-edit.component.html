@@ -1,0 +1,32 @@
+<div *ngIf="employeeToEdit && !success">
+ <form #employeeForm="ngForm" (ngSubmit)="saveEdit(employeeForm)">
+  <fieldset >
+    <legend>Employee Details</legend>
+     <label>
+      ID <input type="text" name="id" [ngModel]="employeeId"  readonly >
+    </label><br>
+    <label>
+      First Name <input type="text" name="firstname" [ngModel]="employeeToEdit.firstname" required>
+    </label><br>
+    <label>
+      Last Name <input type="text" name="lastname" [ngModel]="employeeToEdit.lastname" required>
+    </label><br>
+    <label>
+      Email <input type="email" name="email" [ngModel]="employeeToEdit.email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required>
+    </label><br>
+    <label>
+      Phone(10 digit) <input type="text" name="phone_no" [ngModel]="employeeToEdit.phone_no" pattern="/d{10}" required>
+    </label><br>
+     <label>
+      Status <select  name="status" [ngModel]="employeeToEdit.status" required>
+        <option value="Active">Active</option>
+        <option value="Inactive">Inactive</option>
+        </select>
+    </label><br>
+  </fieldset>
+  <button  type="submit">Save</button>
+  <button  [routerLink]="['/list']">Cancel</button>
+
+</form>
+
+</div>

@@ -1,0 +1,35 @@
+{
+  "data":[{
+    
+      "id":1,
+      "firstname":"krishan",
+      "lastname":"kumar",
+      "email":"22krishan@gmail.com",
+      "phone_no":"98992534",
+      "status":"Active"
+  },{
+      "id":2,
+      "firstname":"Ajinkya",
+      "lastname":"kumar",
+      "email":"92krishan@gmail.com",
+      "phone_no":"98A9152757",
+      "status":"Inactive"
+  },
+  {
+      "id":3,
+      "firstname":"Saurabh",
+      "lastname":"kumar",
+      "email":"32krishan@gmail.com",
+      "phone_no":"7854875847",
+      "status":"Inactive"
+  },
+  {
+      "id":4,
+      "firstname":"Pranjal",
+      "lastname":"kumar",
+      "email":"42krishan@gmail.com",
+      "phone_no":"2545436346",
+      "status":"Inactive"
+  }
+  ]
+}
